@@ -41,18 +41,23 @@
           <div class="healthbar">
             <div
               class="healthbar text-center"
-              :class="[lowhealthplayer ? 'barra-vermelha' : 'barra-verde']"
+              :class="[lowhealthmonster ? 'barra-vermelha' : 'barra-verde']"
               :style="{width:monsterHealth+'%'}"
             ></div>
           </div>
         </div>
       </section>
       <section class="row controls">
-        <div class="small-12 columns" v-if="startGame===false">
+        <div class="small-12 columns" v-if="!startGame">
           <button id="start-game" @click="comecarJogo()">START NEW GAME</button>
         </div>
       </section>
-      <section  tion class="row controls">
+      <section class="row controls" v-if="startGame ">
+        <div class="small-gif"> 
+          <img src="https://i.pinimg.com/originals/f6/7a/b9/f67ab96b6322ffd79ba6235bd32b256f.gif" >
+        </div>
+      </section>
+      <section class="row controls">
         <div class="small-12 columns">
           <button id="attack" @click="ataque()">ATTACK</button>
           <button id="special-attack" @click="specialattack()">
@@ -62,15 +67,9 @@
           <button id="give-up" @click="giveup()">GIVE UP</button>
         </div>
       </section>
-      <section class="row log">
-        <!-- v-if="historicos.lenght>0" -->
+      <section class="row log" v-if="historicos.length>0">
         <div class="small-12 columns">
           <ul>
-            <!--li v-for="historico in historicos" 
-            :class="{'player-historico': historico.isPlayer,
-            'monster-historico':!historico.isPlayer}">
-              {{historicos.texto}}
-            <li> -->
             <li v-for="historico in historicos" :class="{'player-turn':historico.player, 'monster-turn' :!historico.player}">
               {{ historico.texto }}
             </li>
@@ -142,7 +141,7 @@
           if(playerHealth <= 50){
             this.lowhealthplayer = true;
           }
-          else if (monsterHealth<=50){
+          if (monsterHealth<=50){
             this.lowhealthmonster = true;
           }
 
@@ -171,11 +170,28 @@
 
           if (this.playerHealth + healing >= 100) {
             this.playerHealth = 100;
-          } else {
+          } 
+          else {
             this.playerHealth = this.playerHealth + healing;
           }
+
+          if(this.playerHealth > 50){
+
+            this.lowhealthplayer = false;
+          }
+          if (this.monsterHealth > 50){
+
+            this.lowhealthmonster = false;
+          }
+          this.historicos.unshift({
+            texto:"O player deu " + healing +  " de heal",
+            player:true,
+          })
+
         },
-        giveup: function () {
+        giveup: function (){
+
+          this.startGame = false;
           alert("Monstro Win");
           window.location.reload();
         },
