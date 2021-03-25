@@ -3,6 +3,10 @@
   <head>
     <title>Monster Slayer</title>
     <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <link rel="stylesheet" href="foundation.min.css" />
     <link rel="stylesheet" href="app.css" />
   </head>
@@ -29,27 +33,31 @@
         <div class="small-6 columns">
           <h1 class="text-center">YOU</h1>
           <div class="healthbar">
+            <div class="animate__animated animate__lightSpeedInRight"> 
             <div
               class="healthbar text-center"
               :class="[lowhealthplayer ? 'barra-vermelha' : 'barra-verde']"
               :style="{width:playerHealth+'%'}"
             ></div>
+            </div>
           </div>
         </div>
         <div class="small-6 columns">
           <h1 class="text-center">MONSTER</h1>
           <div class="healthbar">
+            <div class="animate__animated animate__lightSpeedInRight"> 
             <div
               class="healthbar text-center"
               :class="[lowhealthmonster ? 'barra-vermelha' : 'barra-verde']"
               :style="{width:monsterHealth+'%'}"
             ></div>
+            </div>
           </div>
         </div>
       </section>
       <section class="row controls">
         <div class="small-12 columns" v-if="!startGame">
-          <button id="start-game" @click="comecarJogo()">START NEW GAME</button>
+          <button id="start-game" @click="comecarJogo()" >START NEW GAME</button>
         </div>
       </section>
       <section class="row controls" v-if="startGame ">
@@ -59,6 +67,7 @@
       </section>
       <section class="row controls">
         <div class="small-12 columns">
+        <div class=""></div>  
           <button id="attack" @click="ataque()">ATTACK</button>
           <button id="special-attack" @click="specialattack()">
             SPECIAL ATTACK
@@ -87,6 +96,7 @@
         monsterHealth: 100,
         startGame: false,
         player: 0, // 0 - nos, 1- monstro
+        contador: 0,
 
         lowhealthplayer : false,
         lowhealthmonster : false,
@@ -94,10 +104,18 @@
         historicos: [],
       },
       methods: {
+
         comecarJogo: function () {
           this.startGame = true;
           this.playerHealth = 100;
           this.monsterHealth = 100;
+          var dados = this;
+          setTimeout(function(){
+
+              alert("Tempo de jogo terminou!");
+              dados.contador = 0;
+
+          },20000)
           //this.historicos = [];         // reload - redudante
         },
         ataque: function () {
