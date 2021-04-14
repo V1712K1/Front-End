@@ -12,6 +12,7 @@
           <b-nav-item href="/">Home</b-nav-item>
           <b-nav-item href="/About">About</b-nav-item>
           <b-nav-item href="/Profile">Profile</b-nav-item>
+          <b-nav-item href="/Profiles">Profiles</b-nav-item>
         </b-navbar-nav>
       </b-navbar>
     </div>

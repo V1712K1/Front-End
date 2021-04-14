@@ -30,6 +30,23 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "profile" */ "../views/Profile.vue"),
   },
+
+  {
+    path:"*",
+    name: "Erro",
+    component:() =>
+      import("../views/Erro.vue")
+  },
+
+  {
+    path: "/Profiles/:id",
+    name: "Profiles",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "profile" */ "../views/Profiles.vue"),
+  },
 ];
 
 const router = new VueRouter({
