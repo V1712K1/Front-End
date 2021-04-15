@@ -3,19 +3,16 @@
     <div class="err">4</div>
     <i class="far fa-question-circle fa-spin"></i>
     <div class="err2">4</div>
-    <div class="msg">Maybe this page moved? Got deleted? Is hiding out in quarantine? Never existed in the first place?<p>Let's go <a href="#">home</a> and try from there.</p></div>
+    <div class="msg">Maybe this page moved? Got deleted? Is hiding out in quarantine? Never existed in the first place?<p>Let's go <a href="/">home</a> and try from there.</p></div>
       </div>
 </template>
 <style scoped>
-    body {
-  background-color: #95c2de;
-}
 
 .mainbox {
   background-color: #95c2de;
   margin: auto;
-  height: 600px;
-  width: 600px;
+  height: 800px;
+  width: 1440px;
   position: relative;
 }
 
@@ -24,14 +21,14 @@
     font-family: 'Nunito Sans', sans-serif;
     font-size: 11rem;
     position:absolute;
-    left: 20%;
+    left: 37%;
     top: 8%;
   }
 
 .far {
   position: absolute;
   font-size: 8.5rem;
-  left: 42%;
+  left: 46%;
   top: 15%;
   color: #ffffff;
 }
@@ -41,7 +38,7 @@
     font-family: 'Nunito Sans', sans-serif;
     font-size: 11rem;
     position:absolute;
-    left: 68%;
+    left: 57%;
     top: 8%;
   }
 
