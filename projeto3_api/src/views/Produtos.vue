@@ -1,0 +1,9 @@
+<template>
+    <v-container>
+        <v-row>
+            <h1>
+                Produtos
+            </h1>
+        </v-row>
+    </v-container>
+</template>
