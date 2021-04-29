@@ -32,7 +32,15 @@
         >
           <v-list-item>
             <v-list-item-title
-              ><router-link to="/Produto"
+              ><router-link to="/Login"
+                >Login</router-link
+              ></v-list-item-title
+            >
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-title
+              ><router-link to="/Produto/raca"
                 >Produto</router-link
               ></v-list-item-title
             >
