@@ -4,6 +4,8 @@ import Home from '../views/Home.vue'
 import Produto from '../views/Produto.vue'
 import Produtos from '../views/Produtos.vue'
 import Login from '../views/Login.vue'
+import Register from '../views/Register.vue'
+
 
 Vue.use(VueRouter)
 
@@ -36,8 +38,14 @@ const routes = [
     path: '/Login',
     name: 'Login',
     component: Login
+  },
+  {
+    path: '/Register',
+    name: 'Register',
+    component: Register
   }
 ]
+
 
 const router = new VueRouter({
   mode: 'history',

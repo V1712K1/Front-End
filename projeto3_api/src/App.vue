@@ -32,6 +32,14 @@
         >
           <v-list-item>
             <v-list-item-title
+              ><router-link to="/Register"
+                >Register</router-link
+              ></v-list-item-title
+            >
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-title
               ><router-link to="/Login"
                 >Login</router-link
               ></v-list-item-title
