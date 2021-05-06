@@ -11,6 +11,9 @@
     <v-text-field v-model="telefone" :counter="9" :rules="telefoneRules" label="Telefone" required>
     </v-text-field>
 
+    <v-text-field v-model="password" :rules="passRules" label="Password" required>
+    </v-text-field>
+
     <v-checkbox v-model="checkbox" :rules="[v => !!v || 'You must agree to continue!']" label="Do you agree?" required>
     </v-checkbox>
 
@@ -47,6 +50,9 @@
 
 </style>
 <script>
+
+import firebase from 'firebase';
+
   export default {
     data: () => ({
       valid: true,
@@ -65,12 +71,33 @@
         v => !!v || 'Number is required',
         v => (v && v.length <= 9) || 'Insira um numero real!',
       ],
+      password: '',
+      passRules: [
+        v => !!v || 'Password is required',
+      ],
       checkbox: false,
     }),
 
     methods: {
       validate () {
-        this.$refs.form.validate()
+        this.$refs.form.validate();
+
+        firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
+        .then((userCredential) => {
+          // Signed in
+          var user = userCredential.user;
+          console.log("user " + user);
+          // ...
+        })
+        .catch((error) => {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+
+          console.log("errorCode " + errorCode);
+          console.log("errorMessage " + errorMessage);
+          // ..
+        });
+
       },
       reset () {
         this.$refs.form.reset()

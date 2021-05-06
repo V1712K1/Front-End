@@ -11,7 +11,7 @@
             <v-checkbox v-model="checkbox" :rules="[v => !!v || 'You must agree to continue!']" label="Do you agree with the terms?" required>
             </v-checkbox>
 
-            <v-btn :disabled="!valid" :color="success" class="mr-4" style="margin-right:10px;" @click="validate">
+            <v-btn :disabled="!valid" :color="success" class="mr-4" style="margin-right:10px;" @click="validate" >
                 Validate
             </v-btn>
             <v-btn :color="error" class="mr-4" @click="reset">
@@ -45,6 +45,9 @@
 </style>
 
 <script>
+
+import firebase from 'firebase';
+ 
   export default {
     data: () => ({
       valid: true,
@@ -63,11 +66,32 @@
     methods: {
       validate () {
         this.$refs.form.validate()
+  
+        firebase.auth().signInWithEmailAndPassword(this.name, this.password)
+        .then((userCredential) => {
+          // Signed in
+          var user = userCredential.user;
+          console.log("user " + user);
+          // ...
+        })
+        .catch((error) => {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          console.log("errorCode " + errorCode);
+          console.log("errorMessage " + errorMessage);
+        });
+
+        
+        
       },
       
       reset () {
         this.$refs.form.reset()
       },
+
     },
+
+
+
   }
 </script>
