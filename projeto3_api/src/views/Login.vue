@@ -5,14 +5,18 @@
             <v-text-field v-model="name" :counter="10" :rules="nameRules" label="Name" required>
             </v-text-field>
 
-            <v-text-field v-model="password" :rules="passRules" label="Password" required>
+            <v-text-field v-model="password" :rules="passRules" label="Password" type="password" required>
             </v-text-field>
 
             <v-checkbox v-model="checkbox" :rules="[v => !!v || 'You must agree to continue!']" label="Do you agree with the terms?" required>
             </v-checkbox>
 
-            <v-btn :disabled="!valid" :color="success" class="mr-4" style="margin-right:10px;" @click="validate" >
+            <v-btn href="/" :disabled="!valid" :color="success" class="mr-4" style="margin-right:10px;" @click="validate" >
                 Validate
+            </v-btn>
+
+            <v-btn href="/Register" :disabled="!valid" :color="success" class="mr-4"  style="margin-right:10px;">
+              Register
             </v-btn>
             <v-btn :color="error" class="mr-4" @click="reset">
                 Reset Form

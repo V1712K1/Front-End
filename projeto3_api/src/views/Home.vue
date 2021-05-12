@@ -1,14 +1,27 @@
 <template>
-  <div class="home">
-  </div>
+<section>
+  <div :style="image" class="image"></div>
+</section>
 </template>
 
+<style>
+    .image {
+        height: 150px;
+        background-repeat: no-repeat;
+    }
+</style>
+
+
 <script>
-// @ is an alias to /src
 
 export default {
   name: 'Home',
   components: {
-  }
+  },
+  data() {
+    return {
+      image: {backgroundImage: "url(../images/background_doge.jpg)"},
+    };
+  },
 }
 </script>
