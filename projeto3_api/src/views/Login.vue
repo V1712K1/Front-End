@@ -11,16 +11,27 @@
             <v-checkbox v-model="checkbox" :rules="[v => !!v || 'You must agree to continue!']" label="Do you agree with the terms?" required>
             </v-checkbox>
 
-            <v-btn href="/" :disabled="!valid" :color="success" class="mr-4" style="margin-right:10px;" @click="validate" >
+            <v-btn :disabled="!valid" :color="success" class="mr-4" style="margin-right:10px;" @click="validate" >
                 Validate
             </v-btn>
 
-            <v-btn href="/Register" :disabled="!valid" :color="success" class="mr-4"  style="margin-right:10px;">
+            <v-btn :disabled="!valid" :color="success" class="mr-4"  style="margin-right:10px;">
               Register
             </v-btn>
             <v-btn :color="error" class="mr-4" @click="reset">
                 Reset Form
             </v-btn>
+
+            <div v-if="alerta">
+              <v-alert
+                outlined
+                type="warning"
+                prominent
+                border="left"
+              >
+                Problema de autenticacao
+              </v-alert>
+            </div>
         </v-form>
     </div>
 </div>    
@@ -65,6 +76,7 @@ import firebase from 'firebase';
         v => !!v || 'Password is required',
       ],
       checkbox: false,
+      alerta: false,
     }),
 
     methods: {
@@ -74,8 +86,10 @@ import firebase from 'firebase';
         firebase.auth().signInWithEmailAndPassword(this.name, this.password)
         .then((userCredential) => {
           // Signed in
+          this.$router.push("/");
           var user = userCredential.user;
           console.log("user " + user);
+          this.alerta = false;
           // ...
         })
         .catch((error) => {
@@ -83,10 +97,10 @@ import firebase from 'firebase';
           var errorMessage = error.message;
           console.log("errorCode " + errorCode);
           console.log("errorMessage " + errorMessage);
+          this.alerta = true;
+          this.$router.push("/Register");
         });
 
-        
-        
       },
       
       reset () {

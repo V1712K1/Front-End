@@ -91,7 +91,7 @@ import firebase from 'firebase';
       validate () {
         this.$refs.form.validate();
 
-        firebase.auth().createUserWithEmailAndPassword(this.name, this.email, this.data, this.telefone, this.password)
+        firebase.auth().createUserWithEmailAndPassword(this.name,this.email,this.data, this.telefone , this.password)
         .then((userCredential) => {
           // Signed in
           var user = userCredential.user;

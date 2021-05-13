@@ -1,15 +1,8 @@
 <template>
-<section>
-  <div :style="image" class="image"></div>
-</section>
+  <div class="container-fluid" :style="{'background-image': 'url(' + require('@/assets/background_doge.jpg') + ')'}" style="height:1000px;">
+    <h1>hello</h1> 
+  </div>  
 </template>
-
-<style>
-    .image {
-        height: 150px;
-        background-repeat: no-repeat;
-    }
-</style>
 
 
 <script>
@@ -17,11 +10,6 @@
 export default {
   name: 'Home',
   components: {
-  },
-  data() {
-    return {
-      image: {backgroundImage: "url(../images/background_doge.jpg)"},
-    };
-  },
+  }, 
 }
 </script>
