@@ -3,9 +3,9 @@
         <br />
           <div class="barrapesquisa">
            <v-text-field label="Insira o nome de uma raça" :rules="rules" hide-details="auto" class="inputpesquisa" v-model="raca" v-on:keyup.enter="procuraRaca(raca)" ></v-text-field>       
-            <v-btn class="ma-2" outlined color="green" @click="procuraRaca(raca)">Pesquisa</v-btn>
+            <v-btn class="ma-2" outlined color="black" @click="procuraRaca(raca)">Pesquisa</v-btn>
           </div>  
-              <v-row class="rowimagem">
+              <v-row class="rowimagem" v-if="cards">
                 <div class="polaroid">
                   <v-img :src="imagemL" alt="1_img" style="width:500px; height:400px;"></v-img>
                     <div class="container">
@@ -33,12 +33,9 @@
 </template>
 
 <style>
-
 .fonts_pag{
-
   font-family: 'Original Surfer', cursive;
 }
-
 div.polaroid {
   width: 500px;
   background-color: white;
@@ -46,40 +43,30 @@ div.polaroid {
   margin-bottom: 25px;
   margin-right:25px;
 }
-
 div.container {
   text-align: center;
   padding: 10px 20px;
 }
-
 .barrapesquisa{
   display: flex;
   justify-content: left;
   margin-bottom: 20px;
 }
-
 .inputpesquisa{
-
-  border: 2px solid green;
+  border: 2px solid white;
   margin-right: 10px; 
   width: 50%;
 }
-
 .rowimagem{
-
     display: flex;
     justify-content: space-around;
     padding: 15px;
 }
-
-
-
 </style>
 
 
 <script>
 import axios from "axios";
-
 export default {
   data() {
     return {
@@ -93,35 +80,29 @@ export default {
       rules: [
         value => (value && value.length >= 3) || 'Min 3 characters',
       ],
+      cards: false,
+
     };
   },
-  mounted() {
-
+  mounted() {  // retorna as raças dos caes
     axios
       .get("https://dog.ceo/api/breeds/list/all")
       .then(response => (this.info = response.data.message));
-
   },
   methods: {
-
     procuraRaca(raca){
        
         axios
         .get("https://dog.ceo/api/breed/" + raca + "/images/random")
         .then(response =>(this.imagemL = response.data.message));
-
         axios
         .get("https://dog.ceo/api/breed/" + raca + "/images/random")
         .then(response =>(this.imagemR = response.data.message));
         //console.log(that.imagem);
-
-     //   this.procuraFacto();
-
+        //   this.procuraFacto();
+        this.cards = true;
     },
-
     
-
-
   },
 };
 </script>

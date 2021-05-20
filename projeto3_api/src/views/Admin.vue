@@ -14,6 +14,8 @@
             <v-text-field v-model="password" :rules="passRules" label="Password" type="password" required>
             </v-text-field>
 
+             <v-checkbox v-model="checkbox" :rules="[v => !!v || 'You must agree to continue!']" label="Do you agree?" required></v-checkbox>
+
             <div class="botoes">
             <v-btn :disabled="!valid" color="success" class="mr-4" style="margin-right:10px;" @click="validate" >
                 Validate
@@ -25,6 +27,8 @@
             <v-btn color="error" @click="reset">
                 Reset Form
             </v-btn>
+
+            
 
             <div class="problem" v-if="alerta">
               <v-alert outlined :type="warning" prominent border="left" style="color:white;">
@@ -94,8 +98,11 @@ import firebase from 'firebase';
       passRules: [
         v => !!v || 'Password is required',
       ],
+      checkbox: false,
+
       alerta: false,      
       alert: '',
+      
     }),
 
     methods: {

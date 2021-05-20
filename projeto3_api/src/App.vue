@@ -11,7 +11,15 @@
         <router-link to="/">
           <img :src="require('../images/icon_toolbar.png')" height="37"/>
         </router-link>  
-      </v-app-bar-nav-icon>    
+      </v-app-bar-nav-icon> 
+
+      <v-app-bar-nav-icon>
+        <router-link to="/Admin">
+          <span class="material-icons">
+            admin_panel_settings
+          </span>
+        </router-link>    
+      </v-app-bar-nav-icon>
 
       <v-app-bar-nav-icon>
         <router-link to="/Login"> 
@@ -29,6 +37,8 @@
         </router-link>  
       </v-app-bar-nav-icon> 
     </v-app-bar>
+
+    
 
     <v-navigation-drawer color="deep-orange lighten-2"  v-model="drawer" absolute bottom temporary>
       <v-list nav dense>
@@ -59,6 +69,7 @@
               </router-link>
             </v-list-item-title>
           </v-list-item>
+          
 
           <v-list-item>
             <v-list-item-title>-----</v-list-item-title>
