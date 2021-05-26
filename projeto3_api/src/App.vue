@@ -1,20 +1,28 @@
 <template>
   <div>
-    <v-system-bar color="deep-purple darken-3"></v-system-bar>
+    <v-app>
 
-    <v-app-bar color="deep-purple accent-4" dark dense>
+    <v-app-bar color="deep-orange darken-2" dark dense>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
       <v-spacer></v-spacer>
 
       <v-app-bar-nav-icon>
-        <router-link to="/" class="icons_nav">
-          <img class="mr-3" :src="require('../images/icon_toolbar.png')" height="35"/>
+        <router-link to="/">
+          <img :src="require('../images/icon_toolbar.png')" height="37"/>
         </router-link>  
-      </v-app-bar-nav-icon>    
+      </v-app-bar-nav-icon> 
 
       <v-app-bar-nav-icon>
-        <router-link to="/Login" class="icons_nav"> 
+        <router-link to="/Admin_Login">
+          <span class="material-icons">
+            admin_panel_settings
+          </span>
+        </router-link>    
+      </v-app-bar-nav-icon>
+
+      <v-app-bar-nav-icon>
+        <router-link to="/Login"> 
           <span class="material-icons">
             account_circle
           </span>
@@ -22,7 +30,7 @@
       </v-app-bar-nav-icon>
       
       <v-app-bar-nav-icon>
-        <router-link to="/Register" class="icons_nav"> 
+        <router-link to="/Register">
           <span class="material-icons">
             description
           </span>
@@ -30,33 +38,38 @@
       </v-app-bar-nav-icon> 
     </v-app-bar>
 
-    <v-navigation-drawer v-model="drawer" absolute bottom temporary>
+    
+
+    <v-navigation-drawer color="deep-orange accent-2"  v-model="drawer" absolute bottom temporary>
       <v-list nav dense>
         <v-list-item-group
           v-model="group"
-          active-class="deep-purple--text text--accent-4"
+          active-class="shades white--text text--accent-4"
         >
           <v-list-item>
-            <v-list-item-title
-              ><router-link to="/Produto/raca"
-                >Produto</router-link
-              ></v-list-item-title
-            >
+            <v-list-item-title>
+              <router-link to="/Produto/raca">
+                 Produto
+              </router-link>
+            </v-list-item-title>
           </v-list-item>
 
           <v-list-item>
-            <v-list-item-title
-              ><router-link to="/Produtos"
-                >Produtos</router-link
-              ></v-list-item-title
-            >
+            <v-list-item-title>
+              <router-link to="/Produtos">
+                Produtos
+              </router-link>
+            </v-list-item-title>
           </v-list-item>
 
           <v-list-item>
-            <v-list-item-title
-              ><router-link to="/About">About</router-link></v-list-item-title
-            >
+            <v-list-item-title>
+              <router-link to="/About" >
+                About
+              </router-link>
+            </v-list-item-title>
           </v-list-item>
+          
 
           <v-list-item>
             <v-list-item-title>-----</v-list-item-title>
@@ -65,20 +78,35 @@
       </v-list>
     </v-navigation-drawer>
     <router-view></router-view>
-  </div>
+    <v-footer dark padless>
+    <v-card class="flex" flat tile>
+      <v-card-title class="teal">
+        <strong class="subheading">Get connected with us on social networks!</strong>
+
+        <v-spacer></v-spacer>
+
+        <v-btn v-for="icon in icons" :key="icon" class="mx-4" dark icon id="">
+          <v-icon size="24px">
+            {{ icon }}
+          </v-icon>
+        </v-btn>
+      </v-card-title>
+
+      <v-card-text class="py-2 white--text text-center">
+        {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+      </v-card-text>
+    </v-card>
+  </v-footer>
+  </v-app>
+  </div> 
 </template>
 <style>
 
-.espaco_icons{
+.material-icons{
 
-  display: inline-block;
-  justify-content: right;
+  color: white;
 }
 
-.icons_nav{
-
-  color: aquamarine;
-}
 </style>
 <script>
 export default {
@@ -86,6 +114,12 @@ export default {
   data: () => ({
     drawer: false,
     group: null,
+    icons: [
+        'mdi-facebook',
+        'mdi-twitter',
+        'mdi-linkedin',
+        'mdi-instagram',
+      ],
   }),
 
   watch: {

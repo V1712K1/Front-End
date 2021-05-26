@@ -15,27 +15,25 @@
             </v-text-field>
 
             <div class="botoes">
-            <v-btn :disabled="!valid" color="success" class="mr-4" style="margin-right:10px;" @click="validate" >
+            <v-btn :disabled="!valid" color="indigo lighten-1" class="mr-4" style="margin-right:10px; color:white;" @click="validate" >
                 Validate
             </v-btn>
 
-            <v-btn color="warning" class="mr-4"  style="margin-right:10px;" @click="regista">
-              Register
-            </v-btn>
-            <v-btn color="error" @click="reset">
+            <v-btn color="orange accent-2" style="color:white;" @click="reset">
                 Reset Form
             </v-btn>
+            </div>
 
             <div class="problem" v-if="alerta">
-              <v-alert outlined :type="warning" prominent border="left" style="color:white;">
+              <v-alert type="warning" prominent border="left" style="color:white;">
                 Problema de autenticacao (verifique credencias)
                 {{alert}}
               </v-alert>
             </div>
-            </div>
+            
         </v-form>
     </div>
-</div>  
+</div>    
 </v-app>
 </template>
 
@@ -61,14 +59,16 @@
 
 .problem{
 
-  margin-top: 20px;
-  background-color: orangered;
+  margin-top: 25px;
+  border-radius: 10px;
 }
 
 .botoes{
 
+  margin-top: 10px;
   display: flex;
   justify-content: left;
+  color: white;
 }
 
 .alinha_info{
@@ -94,8 +94,11 @@ import firebase from 'firebase';
       passRules: [
         v => !!v || 'Password is required',
       ],
+      checkbox: false,
+
       alerta: false,      
       alert: '',
+      
     }),
 
     methods: {
@@ -107,7 +110,7 @@ import firebase from 'firebase';
           var user = userCredential.user;
           console.log("user " + user);
           this.alerta = false;
-          this.$router.push("/");
+          this.$router.push("/Admin");
         })
         .catch((error) => {
           

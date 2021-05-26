@@ -5,6 +5,10 @@ import Produto from '../views/Produto.vue'
 import Produtos from '../views/Produtos.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
+import Admin_Login from '../views/Admin_Login.vue'
+import Admin from '../views/Admin.vue'
+import firebase from 'firebase'
+
 
 
 Vue.use(VueRouter)
@@ -27,22 +31,50 @@ const routes = [
     path: '/Produto/:id',
     props: true,
     name: 'Produto',
-    component: Produto
+    component: Produto,
+    meta:{
+      requiresAuth: true,
+    }
   },
   {
     path: '/Produtos',
     name: 'Produtos',
-    component: Produtos
+    component: Produtos,
+    meta:{
+      requiresAuth: true,
+    }
+  },
+  {
+    path: '/Admin_Login',
+    name: 'Admin_Login',
+    component: Admin_Login,
+    meta:{
+      requiresAuth: true,
+    }
+  },
+  {
+    path: '/Admin',
+    name: 'Admin',
+    component: Admin,
+    meta:{
+      requiresAuth: true,
+    }
   },
   {
     path: '/Login',
     name: 'Login',
-    component: Login
+    component: Login,
+    meta:{
+      requiresAuth: false,
+    }
   },
   {
     path: '/Register',
     name: 'Register',
-    component: Register
+    component: Register,
+    meta:{
+      requiresAuth: false,
+    }
   }
 ]
 
@@ -53,4 +85,17 @@ const router = new VueRouter({
   routes
 })
 
+router.beforeEach((to,from,next) => {
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+  const currentUser = firebase.auth().currentUser;
+   if (requiresAuth && currentUser == true) { 
+    next('/Login');
+  } else {
+     next();
+  }
+});
+
 export default router
+
+
+

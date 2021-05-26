@@ -1,7 +1,8 @@
 <template>
-  <div class="container-fluid" :style="{'background-image': 'url(' + require('@/assets/background_doge.jpg') + ')'}" style="height:1000px;">
-    <h1>hello</h1> 
-  </div>  
+<v-app>
+  <div class="container-fluid" :style="{'background-image': 'url(' + require('@/assets/background_doge.jpg') + ')'}" style="height:900px;">
+  </div> 
+</v-app> 
 </template>
 
 
