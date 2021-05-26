@@ -35,7 +35,7 @@
             </div>
         </v-form>
     </div>
-</div>  
+</div>    
 </v-app>
 </template>
 

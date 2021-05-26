@@ -5,7 +5,6 @@ import Produto from '../views/Produto.vue'
 import Produtos from '../views/Produtos.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
-import Admin_Login from '../views/Admin_Login.vue'
 import Admin from '../views/Admin.vue'
 import firebase from 'firebase'
 
@@ -40,14 +39,6 @@ const routes = [
     path: '/Produtos',
     name: 'Produtos',
     component: Produtos,
-    meta:{
-      requiresAuth: true,
-    }
-  },
-  {
-    path: '/Admin_Login',
-    name: 'Admin_Login',
-    component: Admin_Login,
     meta:{
       requiresAuth: true,
     }

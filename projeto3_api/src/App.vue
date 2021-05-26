@@ -2,7 +2,7 @@
   <div>
     <v-app>
 
-    <v-app-bar color="deep-orange darken-2" dark dense>
+    <v-app-bar color="teal" dark dense>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
       <v-spacer></v-spacer>
@@ -14,7 +14,7 @@
       </v-app-bar-nav-icon> 
 
       <v-app-bar-nav-icon>
-        <router-link to="/Admin_Login">
+        <router-link to="/Admin">
           <span class="material-icons">
             admin_panel_settings
           </span>
@@ -40,7 +40,7 @@
 
     
 
-    <v-navigation-drawer color="deep-orange accent-2"  v-model="drawer" absolute bottom temporary>
+    <v-navigation-drawer color="deep-orange lighten-2"  v-model="drawer" absolute bottom temporary>
       <v-list nav dense>
         <v-list-item-group
           v-model="group"
