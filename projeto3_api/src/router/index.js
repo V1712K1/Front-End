@@ -6,11 +6,12 @@ import Produtos from '../views/Produtos.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 import Admin from '../views/Admin.vue'
-import firebase from 'firebase'
+import Admin_Login from '../views/Admin_Login.vue'
+import Erro from '../views/Erro.vue'
 
 
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
@@ -24,7 +25,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import('../views/About.vue')
   },
   {
     path: '/Produto/:id',
@@ -52,6 +53,14 @@ const routes = [
     }
   },
   {
+    path: '/Admin_Login',
+    name: 'Admin_Login',
+    component: Admin_Login,
+    meta:{
+      requiresAuth: true,
+    }
+  },
+  {
     path: '/Login',
     name: 'Login',
     component: Login,
@@ -66,7 +75,12 @@ const routes = [
     meta:{
       requiresAuth: false,
     }
-  }
+  },
+  {
+    path: '*',
+    name: 'Erro',
+    component: Erro
+  },
 ]
 
 
@@ -75,16 +89,6 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
-
-router.beforeEach((to,from,next) => {
-  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
-  const currentUser = firebase.auth().currentUser;
-   if (requiresAuth && currentUser == true) { 
-    next('/Login');
-  } else {
-     next();
-  }
-});
 
 export default router
 

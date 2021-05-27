@@ -1,12 +1,13 @@
 <template>
 <v-app>
+<div class="container-fluid" :style="{'background-image': 'url(' + require('@/assets/back_login.jpg') + ')'}" style="height:100%; width:100%;">
 <div class="container">
     <v-alert type="info">
-      <div class="alinha_info">
+      <div class="alinha_info" >
       If your not registered in our site, please click register button
       </div>
     </v-alert>
-    <div class="formulario" v-on:keyup.enter="validate()">
+    <div class="formulario" v-on:keyup.enter="validate()" id="form">
         <v-form class="form_style" ref="form" v-model="valid" lazy-validation>
             <v-text-field v-model="email" :counter="255" :rules="emailRules" label="Email" required>
             </v-text-field>
@@ -35,20 +36,23 @@
             </div>
         </v-form>
     </div>
+  </div>   
 </div>    
 </v-app>
 </template>
 
-<style>
+<style scoped>
 .container-fluid{
     padding: 30px;
     font-family: 'Original Surfer', cursive;
 }
 
-.formulario{
+#form{
 
     display: flex;
     justify-content: stretch;
+    position: relative;
+    background-color:burlywood;
 
 }
 
@@ -74,6 +78,15 @@
 .alinha_info{
   display: flex;
   justify-content: left;
+}
+
+.container-fluid{
+  background-size: cover;
+}
+
+.container{
+  margin-top: 45px;
+
 }
 
 </style>

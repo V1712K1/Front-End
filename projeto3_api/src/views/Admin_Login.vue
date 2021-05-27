@@ -3,7 +3,7 @@
 <div class="container">
     <v-alert type="info">
       <div class="alinha_info">
-      If your not registered in our site, please click register button
+      Administrator Only
       </div>
     </v-alert>
     <div class="formulario" v-on:keyup.enter="validate()">
@@ -107,10 +107,15 @@ import firebase from 'firebase';
   
         firebase.auth().signInWithEmailAndPassword(this.email, this.password)
         .then((userCredential) => {
-          var user = userCredential.user;
-          console.log("user " + user);
-          this.alerta = false;
-          this.$router.push("/Admin");
+          if(this.email == 'admin@admin.com' && this.password == 'admin1'){
+            var user = userCredential.user;
+            console.log("user " + user);
+            this.alerta = false;
+            this.$router.push("/Admin");
+          }else{
+            this.alerta = true; 
+            this.alert = "Credencias de administrador erradas";
+          }
         })
         .catch((error) => {
           

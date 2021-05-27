@@ -41,7 +41,7 @@
 </div>
 </v-app>
 </template>
-<style>
+<style scoped>
 .container-fluid{
     padding: 30px;
     font-family: 'Original Surfer', cursive;

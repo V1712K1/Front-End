@@ -65,7 +65,7 @@ import axios from "axios";
 
   },
   mounted() {  // retorna as raças dos caes
-    this.api();
+    this.api() ;
     
   },
 
