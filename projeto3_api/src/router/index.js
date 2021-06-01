@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Favoritos from '../views/Favoritos.vue'
 import Produto from '../views/Produto.vue'
-import Produtos from '../views/Produtos.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 import Admin from '../views/Admin.vue'
@@ -20,26 +20,15 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import('../views/About.vue')
+    path: '/Favoritos',
+    name: 'Favoritos',
+    component: Favoritos,
   },
   {
     path: '/Produto/:id',
     props: true,
     name: 'Produto',
     component: Produto,
-    meta:{
-      requiresAuth: true,
-    }
-  },
-  {
-    path: '/Produtos',
-    name: 'Produtos',
-    component: Produtos,
     meta:{
       requiresAuth: true,
     }

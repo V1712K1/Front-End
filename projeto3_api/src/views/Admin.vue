@@ -15,7 +15,7 @@
       </div> 
 
       <br>
-      <v-btn type="submit" class="button"> Enviar </v-btn>
+      <v-btn type="submit" class="button" > Enviar </v-btn>
     </form>
   </div>
 </v-app>
@@ -35,8 +35,10 @@ export default {
 
   methods:{
     submeterFormulario(){
-      return axios.post('https://projetoapi-f1c69-default-rtdb.firebaseio.com/', this.novoRaca)
-    }
+       
+      return axios.post('https://projetoapi-f1c69-default-rtdb.firebaseio.com/.json',  this.novoRaca)
+    },
+    
   }
 
 

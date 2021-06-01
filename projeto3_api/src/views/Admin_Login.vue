@@ -130,10 +130,7 @@ import firebase from 'firebase';
       
       reset () {
         this.$refs.form.reset()
-      },
-
-      regista(){        
-          this.$router.push("/Register");
+        this.alerta = false; 
       }
 
     },

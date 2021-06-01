@@ -13,14 +13,6 @@
         </router-link>  
       </v-app-bar-nav-icon>
 
-       <v-app-bar-nav-icon>
-        <router-link to="/">
-          <span class="material-icons">
-            star_rate
-          </span>
-        </router-link>    
-      </v-app-bar-nav-icon>
-
 
       <v-app-bar-nav-icon>
         <router-link to="/Admin_Login">
@@ -55,29 +47,21 @@
           v-model="group"
           active-class="shades white--text text--accent-4"
         >
-          <v-list-item>
-            <v-list-item-title>
-              <router-link to="/Produto/raca">
-                 Produto
-              </router-link>
-            </v-list-item-title>
-          </v-list-item>
+          <router-link to="/Produto/raca">
+            <v-list-item>
+              <v-list-item-title>
+                 Produto              
+              </v-list-item-title>              
+            </v-list-item>
+          </router-link> 
 
+          <router-link to="/Favoritos">
           <v-list-item>
-            <v-list-item-title>
-              <router-link to="/Produtos">
-                Produtos
-              </router-link>
+            <v-list-item-title>              
+                Favoritos              
             </v-list-item-title>
           </v-list-item>
-
-          <v-list-item>
-            <v-list-item-title>
-              <router-link to="/About" >
-                About
-              </router-link>
-            </v-list-item-title>
-          </v-list-item>
+          </router-link>
 
           <v-list-item>
             <v-list-item-title>-----</v-list-item-title>
