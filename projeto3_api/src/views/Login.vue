@@ -1,6 +1,6 @@
 <template>
 <v-app>
-<div class="container-fluid" :style="{'background-image': 'url(' + require('@/assets/back_login.jpg') + ')'}" style="height:100%; width:100%;">
+<div class="container-fluid" :style="{'background-image': 'url(' + require('@/assets/back_login.jpg') + ')'}" style="height:100%; width:100%; ">
 <div class="container">
     <v-alert type="info">
       <div class="alinha_info" >

@@ -186,7 +186,7 @@ export default {
         this.favoritos.push(this.favoriteDog.image);
         this.snackbar = true;
       } else {
-        alert("ja existe");
+        alert("Já escolheste um favorito desta raça!");
       }
         
     },
