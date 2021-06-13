@@ -1,7 +1,7 @@
 <template>
 <v-app>
 <div class="container-fluid">
-    <div class="formulario">
+    <div class="formulario" v-on:keyup.enter="validate()">
     <v-form class="form_style" ref="form" v-model="valid" lazy-validation>
         
     <v-text-field v-model="name" :counter="20" :rules="nameRules" label="Name" required>
@@ -22,7 +22,7 @@
     <v-checkbox v-model="checkbox" :rules="[v => !!v || 'You must agree to continue!']" label="Do you agree?" required>
     </v-checkbox>
 
-    <v-btn :disabled="!valid" color="success" class="mr-4"  style="margin-right:10px;" @click="validate">
+    <v-btn :disabled="!valid" color="success" class="mr-4"  style="margin-right:10px;" @click="validate" >
       Validate
     </v-btn>
 
@@ -31,7 +31,7 @@
     </v-btn>
     
     <div class="problem" v-if="alerta">
-    <v-alert outlined :type="warning" prominent border="left">
+    <v-alert outlined :type="warning" prominent border="left" style="color:white;">
       Problema de autenticacao (verifique credencias)
       {{alert}}
     </v-alert>
@@ -41,7 +41,7 @@
 </div>
 </v-app>
 </template>
-<style>
+<style scoped>
 .container-fluid{
     padding: 30px;
     font-family: 'Original Surfer', cursive;

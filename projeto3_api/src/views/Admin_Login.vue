@@ -1,13 +1,12 @@
 <template>
 <v-app>
-<div class="container-fluid" :style="{'background-image': 'url(' + require('@/assets/back_login.jpg') + ')'}" style="height:100%; width:100%; ">
 <div class="container">
     <v-alert type="info">
-      <div class="alinha_info" >
-      If your not registered in our site, please click register button
+      <div class="alinha_info">
+      Administrator Only
       </div>
     </v-alert>
-    <div class="formulario" v-on:keyup.enter="validate()" id="form">
+    <div class="formulario" v-on:keyup.enter="validate()">
         <v-form class="form_style" ref="form" v-model="valid" lazy-validation>
             <v-text-field v-model="email" :counter="255" :rules="emailRules" label="Email" required>
             </v-text-field>
@@ -16,43 +15,38 @@
             </v-text-field>
 
             <div class="botoes">
-            <v-btn :disabled="!valid" color="success" class="mr-4" style="margin-right:10px;" @click="validate" >
+            <v-btn :disabled="!valid" color="indigo lighten-1" class="mr-4" style="margin-right:10px; color:white;" @click="validate" >
                 Validate
             </v-btn>
 
-            <v-btn color="warning" class="mr-4"  style="margin-right:10px;" @click="regista">
-              Register
-            </v-btn>
-            <v-btn color="error" @click="reset">
+            <v-btn color="orange accent-2" style="color:white;" @click="reset">
                 Reset Form
             </v-btn>
+            </div>
 
             <div class="problem" v-if="alerta">
-              <v-alert outlined :type="warning" prominent border="left" style="color:white;">
+              <v-alert type="warning" prominent border="left" style="color:white;">
                 Problema de autenticacao (verifique credencias)
                 {{alert}}
               </v-alert>
             </div>
-            </div>
+            
         </v-form>
     </div>
-  </div>   
 </div>    
 </v-app>
 </template>
 
-<style scoped>
+<style>
 .container-fluid{
     padding: 30px;
     font-family: 'Original Surfer', cursive;
 }
 
-#form{
+.formulario{
 
     display: flex;
     justify-content: stretch;
-    position: relative;
-    background-color:burlywood;
 
 }
 
@@ -65,28 +59,21 @@
 
 .problem{
 
-  margin-top: 20px;
-  background-color: orangered;
+  margin-top: 25px;
+  border-radius: 10px;
 }
 
 .botoes{
 
+  margin-top: 10px;
   display: flex;
   justify-content: left;
+  color: white;
 }
 
 .alinha_info{
   display: flex;
   justify-content: left;
-}
-
-.container-fluid{
-  background-size: cover;
-}
-
-.container{
-  margin-top: 45px;
-
 }
 
 </style>
@@ -107,8 +94,11 @@ import firebase from 'firebase';
       passRules: [
         v => !!v || 'Password is required',
       ],
+      checkbox: false,
+
       alerta: false,      
       alert: '',
+      
     }),
 
     methods: {
@@ -117,10 +107,15 @@ import firebase from 'firebase';
   
         firebase.auth().signInWithEmailAndPassword(this.email, this.password)
         .then((userCredential) => {
-          var user = userCredential.user;
-          console.log("user " + user);
-          this.alerta = false;
-          this.$router.push("/");
+          if(this.email == 'admin@admin.com' && this.password == 'admin1'){
+            var user = userCredential.user;
+            console.log("user " + user);
+            this.alerta = false;
+            this.$router.push("/Admin");
+          }else{
+            this.alerta = true; 
+            this.alert = "Credencias de administrador erradas";
+          }
         })
         .catch((error) => {
           
@@ -135,10 +130,7 @@ import firebase from 'firebase';
       
       reset () {
         this.$refs.form.reset()
-      },
-
-      regista(){        
-          this.$router.push("/Register");
+        this.alerta = false; 
       }
 
     },

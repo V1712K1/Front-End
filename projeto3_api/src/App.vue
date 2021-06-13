@@ -2,7 +2,7 @@
   <div>
     <v-app>
 
-    <v-app-bar color="teal" dark dense>
+    <v-app-bar color="deep-orange darken-2" dark dense>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
       <v-spacer></v-spacer>
@@ -11,7 +11,16 @@
         <router-link to="/">
           <img :src="require('../images/icon_toolbar.png')" height="37"/>
         </router-link>  
-      </v-app-bar-nav-icon>    
+      </v-app-bar-nav-icon>
+
+
+      <v-app-bar-nav-icon>
+        <router-link to="/Admin_Login">
+          <span class="material-icons">
+            admin_panel_settings
+          </span>
+        </router-link>    
+      </v-app-bar-nav-icon>
 
       <v-app-bar-nav-icon>
         <router-link to="/Login"> 
@@ -30,35 +39,21 @@
       </v-app-bar-nav-icon> 
     </v-app-bar>
 
-    <v-navigation-drawer color="deep-orange lighten-2"  v-model="drawer" absolute bottom temporary>
+    
+
+    <v-navigation-drawer color="deep-orange accent-2"  v-model="drawer" absolute bottom temporary>
       <v-list nav dense>
         <v-list-item-group
           v-model="group"
           active-class="shades white--text text--accent-4"
         >
-          <v-list-item>
-            <v-list-item-title>
-              <router-link to="/Produto/raca">
-                 Produto
-              </router-link>
-            </v-list-item-title>
-          </v-list-item>
-
-          <v-list-item>
-            <v-list-item-title>
-              <router-link to="/Produtos">
-                Produtos
-              </router-link>
-            </v-list-item-title>
-          </v-list-item>
-
-          <v-list-item>
-            <v-list-item-title>
-              <router-link to="/About" >
-                About
-              </router-link>
-            </v-list-item-title>
-          </v-list-item>
+          <router-link to="/Produto/raca">
+            <v-list-item>
+              <v-list-item-title>
+                 Procurar Câes              
+              </v-list-item-title>              
+            </v-list-item>
+          </router-link> 
 
           <v-list-item>
             <v-list-item-title>-----</v-list-item-title>
@@ -69,7 +64,7 @@
     <router-view></router-view>
     <v-footer dark padless>
     <v-card class="flex" flat tile>
-      <v-card-title class="teal">
+      <v-card-title class="deep-orange darken-2">
         <strong class="subheading">Get connected with us on social networks!</strong>
 
         <v-spacer></v-spacer>
@@ -89,7 +84,7 @@
   </v-app>
   </div> 
 </template>
-<style>
+<style >
 
 .material-icons{
 
