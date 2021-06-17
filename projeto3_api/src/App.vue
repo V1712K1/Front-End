@@ -50,18 +50,10 @@
           <router-link to="/Produto/raca">
             <v-list-item>
               <v-list-item-title>
-                 Produto              
+                 Procurar Câes              
               </v-list-item-title>              
             </v-list-item>
           </router-link> 
-
-          <router-link to="/Favoritos">
-          <v-list-item>
-            <v-list-item-title>              
-                Favoritos              
-            </v-list-item-title>
-          </v-list-item>
-          </router-link>
 
           <v-list-item>
             <v-list-item-title>-----</v-list-item-title>
