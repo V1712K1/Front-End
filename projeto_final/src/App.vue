@@ -52,7 +52,7 @@
           <router-link to="/Tratamentos">
             <v-list-item>
                 <v-list-item-title>
-                 Tratamentos        
+                 Serviços        
                 </v-list-item-title>              
             </v-list-item>
           </router-link>  
@@ -61,31 +61,23 @@
           <router-link to="/Consultas">
             <v-list-item>
                 <v-list-item-title>
-                 Consultas         
+                 Marcar Consulta         
                 </v-list-item-title>              
             </v-list-item>
-          </router-link>  
+          </router-link> 
 
-           <router-link to="/Staff">
+          <router-link to="/about">
             <v-list-item>
               <v-list-item-title>
-                 Staff           
-              </v-list-item-title>              
-            </v-list-item>
-          </router-link>
-
-          <router-link to="/Contactos">
-            <v-list-item>
-              <v-list-item-title>
-                 Contactos            
+                 Quem somos          
               </v-list-item-title>              
             </v-list-item>
           </router-link> 
           
-         <router-link to="/about">
+         <router-link to="/Contactos">
             <v-list-item>
                 <v-list-item-title>
-                 Acerca de            
+                 Contactos      
                 </v-list-item-title>              
             </v-list-item>
           </router-link>    

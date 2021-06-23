@@ -1,0 +1,189 @@
+{
+    
+    "medicamento":{
+        "1":{
+            "nome" : "Antitoxico",
+            "farmaceutica" : "Biofarm",
+            "preco": "15",
+            "caracteristica": "Hepatoprotetor"
+        },
+        "2":{
+            "nome" : "Otoclean",
+            "farmaceutica" : "Esteve vetenirania",
+            "preco": "10",
+            "caracteristica": "Limpador Otico"
+        },
+        "3":{
+            "nome" : "Broadline",
+            "farmaceutica" : "Nova de Maia",
+            "preco": "9",
+            "caracteristica": "Tratamento de parasitas"
+        }            
+    },
+    "estabelecimento":{
+        "1":{
+            "pais" : "Portugal",
+            "cidade" : "Lisboa",
+            "codigo_postal": "1000"
+        },
+        "2":{
+            "pais" : "Portugal",
+            "cidade" : "Funchal",
+            "codigo_postal": "9000"
+        },
+        "3":{
+            "pais" : "Espanha",
+            "cidade" : "Madrid",
+            "codigo_postal": "28001"
+        }            
+    },
+    "cliente":{
+        "1":{
+            "nome" : "Henrique",
+            "idade" : "18",
+            "contacto": "965026890"
+        },
+        "2":{
+            "nome" : "Vitor",
+            "idade" : "20",
+            "contacto": "910716792"
+        },
+        "3":{
+            "nome" : "Gorete",
+            "idade" : "19",
+            "contacto": "963068439"
+        }            
+    },
+    "veterinario":{
+        "1":{
+            "nome" : "Joao Quintas",
+            "especialidade" : "Fisioterapia",
+            "idade": "35",
+            "telemovel": "910445778",
+            "email": "josequintas@gmail.com",
+            "nacionalidade": "portuguesa",
+            "morada": "rua das esquinas, n3" ,
+            "estabelecimento_id": "1"
+        },
+        "2":{
+            "nome" : "Maria Aurelia",
+            "especialidade" : "Endoscopia",
+            "idade": "42",
+            "telemovel": "924889665",
+            "email": "mariaaur@gmail.com",
+            "nacionalidade": "portuguesa",
+            "morada": "rua das pretas, n55" ,
+            "estabelecimento_id": "2"
+        },
+        "3":{
+            "nome" : "Juan Torres",
+            "especialidade" : "Neurologia",
+            "idade": "50",
+            "telemovel": "930224776",
+            "email": "juantrr@outlook.com",
+            "nacionalidade": "espanhola",
+            "morada": "edificio cortes" ,
+            "estabelecimento_id": "3"
+        }            
+    },
+    "animal":{
+        "1":{
+            "nome" : "Tareco",
+            "raca" : "Fisioterapia",
+            "idade": "35",
+            "peso": "910445778",
+            "boletim_de_saude": "josequintas@gmail.com",
+            "veterinario_id": "2"
+        },
+        "2":{
+            "nome" : "Bobi",
+            "raca" : "Pitbull",
+            "idade": "2",
+            "peso": "8",
+            "boletim_de_saude": "Em dia",
+            "veterinario_id": "1"
+        },
+        "3":{
+            "nome" : "Jerry",
+            "raca" : "Porquinho da India",
+            "idade": "1",
+            "peso": "0.5",
+            "boletim_de_saude": "Em falta",
+            "veterinario_id": "3"
+        }            
+    },
+    "tratamento":{
+        "1":{
+            "data_hora" : "2021-09-20",
+            "especialidade" : "Fisioterapia",
+            "preco": "100",
+            "consulta_id": "1"
+        },
+        "2":{
+            "data_hora" : "2022-06-27",
+            "especialidade" : "Neurologia",
+            "preco": "200",
+            "consulta_id": "3"
+        },
+        "3":{
+            "data_hora" : "2021-08-19",
+            "especialidade" : "Endoscopia",
+            "preco": "300",
+            "consulta_id": "2"
+        }            
+    },
+    "consulta":{
+        "1":{
+            "data_hora" : "2022-03-17",
+            "preco" : "50",
+            "veterinario_id": "1",
+            "estabelecimento_id": "1",
+            "cliente_id": "2",
+            "animal_id": "1"
+        },
+        "2":{
+            "data_hora" : "2022-04-27",
+            "preco" : "40",
+            "veterinario_id": "2",
+            "estabelecimento_id": "2",
+            "cliente_id": "3",
+            "animal_id": "2"
+        },
+        "3":{
+            "data_hora" : "2022-09-01",
+            "preco" : "70",
+            "veterinario_id": "3",
+            "estabelecimento_id": "3",
+            "cliente_id": "1",
+            "animal_id": "3"
+        }            
+    },
+    "tratamento_medicamento":{
+        "1":{
+            "tratamento_id":"2",
+            "medicamento_id":"3"
+        },
+        "2":{
+            "tratamento_id":"1",
+            "medicamento_id":"2"
+        },
+        "3":{
+            "tratamento_id":"3",
+            "medicamento_id":"1"
+        }
+    },
+    "veterinario_tratamento":{
+        "1":{
+            "veterinario_id":"2",
+            "tratamento_id":"3"
+        },
+        "2":{
+            "veterinario_id":"1",
+            "tratamento_id":"1"
+        },
+        "3":{
+            "veterinario_id":"3",
+            "tratamento_id":"2"
+        }
+    }
+}

@@ -1,10 +1,11 @@
 <template>
 <v-app>
+<div class="container-fluid" :style="{'background-image': 'url(' + require('/images/fundo_login.jpg') + ')'}" style="height:800px; ">
 <div class="container-fluid" style="height:100%; width:100%; ">
 <div class="container">
     <v-alert type="info">
       <div class="alinha_info" >
-      If your not registered in our site, please click register button
+      Se nao tem registo no nosso site, por favor clique no botão register
       </div>
     </v-alert>
     <div class="formulario" v-on:keyup.enter="validate()" id="form">
@@ -37,7 +38,8 @@
         </v-form>
     </div>
   </div>   
-</div>    
+</div> 
+  </div>   
 </v-app>
 </template>
 
@@ -50,7 +52,6 @@
     display: flex;
     justify-content: stretch;
     position: relative;
-    background-color:#CFD8DC;
 }
 .form_style{
     width: 100%;

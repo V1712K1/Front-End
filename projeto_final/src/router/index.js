@@ -8,8 +8,10 @@ import Admin from '../views/Admin'
 import Register from '../views/Register'
 import Contactos from '../views/Contactos'
 import Consultas from '../views/Consultas'
-import Staff from '../views/Staff'
-import Tratamentos from '../views/Tratamentos'
+import Servicos from '../views/Servicos'
+import Erro from '../views/Erro'
+
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -54,14 +56,14 @@ const routes = [
     component: Consultas
   },
   {
-    path: '/Staff',
-    name: 'Staff',
-    component: Staff
+    path: '/Servicos',
+    name: 'Servicos',
+    component: Servicos
   },
   {
-    path: '/Tratamentos',
-    name: 'Tratamentos',
-    component: Tratamentos
+    path: '*',
+    name: 'Error',
+    component: Erro
   },
 ]
 

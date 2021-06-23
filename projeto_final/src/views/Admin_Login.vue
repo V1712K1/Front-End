@@ -15,11 +15,11 @@
             </v-text-field>
 
             <div class="botoes">
-            <v-btn :disabled="!valid" color="teal lighten-4" class="mr-4" style="margin-right:10px; color:white;" @click="validate" >
+            <v-btn :disabled="!valid" color="teal lighten-4" class="mr-4" style="margin-right:10px; color:black;" @click="validate" >
                 Validate
             </v-btn>
 
-            <v-btn color="orange lighten-3" style="color:white;" @click="reset">
+            <v-btn color="orange lighten-3" style="color:black;" @click="reset">
                 Reset Form
             </v-btn>
             </div>
@@ -60,11 +60,14 @@
   margin-top: 10px;
   display: flex;
   justify-content: left;
-  color: white;
 }
 .alinha_info{
   display: flex;
   justify-content: left;
+}
+
+.container{
+  margin-top: 50px;
 }
 </style>
 
