@@ -2,22 +2,22 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import vuetify from './plugins/vuetify'
-// import firebase from 'firebase';
+import firebase from 'firebase';
 
 
 Vue.config.productionTip = false
 
-// const firebaseConfig = {
-//   apiKey: "AIzaSyDpqv3AVSyxhglRoBZg0rEDEEJPtW9k6gM",
-//   authDomain: "projetoapi-f1c69.firebaseapp.com",
-//   projectId: "projetoapi-f1c69",
-//   storageBucket: "projetoapi-f1c69.appspot.com",
-//   messagingSenderId: "78816939743",
-//   appId: "1:78816939743:web:26c3ea1f28f986c015636a",
-//   measurementId: "G-ZJJM2WD0LW"
-// };
+const firebaseConfig = {
+  apiKey: "AIzaSyAzJYUd2Uv3YJOfYbCvFs-82v31j7IAbho",
+  authDomain: "projeto-veterinario.firebaseapp.com",
+  projectId: "projeto-veterinario",
+  storageBucket: "projeto-veterinario.appspot.com",
+  messagingSenderId: "1043737971550",
+  appId: "1:1043737971550:web:a0a084f39f2d182edf5dcf",
+  measurementId: "G-JVWR7LJFP2"
+};
 
-// firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
 
 

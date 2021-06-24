@@ -72,7 +72,7 @@
 </style>
 
 <script>
-//import firebase from 'firebase';
+import firebase from 'firebase';
  
   export default {
     data: () => ({
@@ -95,18 +95,18 @@
       validate () {
         this.$refs.form.validate()
   
-        /*firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+        firebase.auth().signInWithEmailAndPassword(this.email, this.password)
         .then((userCredential) => {
           if(this.email == 'admin@admin.com' && this.password == 'admin1'){
             var user = userCredential.user;
             console.log("user " + user);
             this.alerta = false;
-            this.$router.push("/Admin");
+            this.$router.push("/admin");
           }else{
             this.alerta = true; 
             this.alert = "Credencias de administrador erradas";
           }
-        })*/
+        })
         .catch((error) => {
           
           var errorCode = error.code;

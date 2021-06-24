@@ -4,6 +4,7 @@
 
     <v-app-bar color="indigo accent-1" dark dense>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-toolbar-title>Veterinario</v-toolbar-title>
 
       <v-spacer></v-spacer>
 
@@ -49,10 +50,10 @@
           active-class="shades white--text text--accent-4"
         >
         
-          <router-link to="/Tratamentos">
+          <router-link to="/Staff">
             <v-list-item>
                 <v-list-item-title>
-                 Serviços        
+                 Staff        
                 </v-list-item-title>              
             </v-list-item>
           </router-link>  

@@ -4,12 +4,13 @@ import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Login from '../views/Login.vue'
 import Admin_Login from '../views/Admin_Login'
-import Admin from '../views/Admin'
+import Administrador from '../views/Admin'
 import Register from '../views/Register'
 import Contactos from '../views/Contactos'
 import Consultas from '../views/Consultas'
 import Servicos from '../views/Servicos'
 import Erro from '../views/Erro'
+import Staff from '../views/Staff'
 
 
 Vue.use(VueRouter)
@@ -43,7 +44,7 @@ const routes = [
   {
     path: '/Admin',
     name: 'Admin',
-    component: Admin
+    component: Administrador
   },
   {
     path: '/Contactos',
@@ -61,10 +62,15 @@ const routes = [
     component: Servicos
   },
   {
+    path: '/Staff',
+    name: 'Staff',
+    component: Staff
+  },
+  {
     path: '*',
     name: 'Error',
     component: Erro
-  },
+  }
 ]
 
 const router = new VueRouter({

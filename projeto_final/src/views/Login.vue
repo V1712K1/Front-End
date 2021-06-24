@@ -1,6 +1,6 @@
 <template>
 <v-app>
-<div class="container-fluid" :style="{'background-image': 'url(' + require('/images/fundo_login.jpg') + ')'}" style="height:800px; ">
+<div class="container-fluid" :style="{'background-image': 'url(' + require('/images/fundo_login.jpg') + ')'}" style="height:1000px; ">
 <div class="container-fluid" style="height:100%; width:100%; ">
 <div class="container">
     <v-alert type="info">
@@ -39,7 +39,7 @@
     </div>
   </div>   
 </div> 
-  </div>   
+</div>   
 </v-app>
 </template>
 
@@ -80,7 +80,7 @@
 </style>
 
 <script>
-//import firebase from 'firebase';
+import firebase from 'firebase';
  
   export default {
     data: () => ({
@@ -101,13 +101,13 @@
       validate () {
         this.$refs.form.validate()
   
-        /*firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+        firebase.auth().signInWithEmailAndPassword(this.email, this.password)
         .then((userCredential) => {
           var user = userCredential.user;
           console.log("user " + user);
           this.alerta = false;
           this.$router.push("/");
-        })*/
+        })
         .catch((error) => {
           
           var errorCode = error.code;

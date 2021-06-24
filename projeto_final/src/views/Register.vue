@@ -63,7 +63,7 @@
 }
 </style>
 <script>
-//import firebase from 'firebase';
+import firebase from 'firebase';
   export default {
     data: () => ({
       valid: true,
@@ -97,7 +97,7 @@
     methods: {
       validate () {
         this.$refs.form.validate();
-        /*firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
+        firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
         .then((userCredential) => {
           // Signed in
           var user = userCredential.user;
@@ -112,7 +112,7 @@
           this.alerta = true;
           this.alert =errorMessage;
           console.log(errorCode);
-        });*/
+        });
       },
       reset () {
         this.$refs.form.reset()
