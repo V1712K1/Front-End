@@ -3,8 +3,8 @@
     <v-app>
 
     <v-app-bar color="indigo accent-1" dark dense>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title>Veterinario</v-toolbar-title>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" style="color:black;" ></v-app-bar-nav-icon>
+      <v-toolbar-title style="color:black;">Veterinario</v-toolbar-title>
 
       <v-spacer></v-spacer>
 
@@ -90,9 +90,9 @@
       </v-list>
     </v-navigation-drawer>
     <router-view></router-view>
-    <v-footer dark padless class="cor_footer">
+    <v-footer dark padless>
     <v-card class="flex" flat tile>
-      <v-card-title class="indigo accent-1">
+      <v-card-title class="cor_footer">
         <strong class="subheading">Get connected with us on social networks!</strong>
 
         <v-spacer></v-spacer>
@@ -119,6 +119,11 @@
 
 .subheading{
   color: black;
+}
+
+.cor_footer{
+
+  background-color: #536DFE;
 }
 </style>
 <script>

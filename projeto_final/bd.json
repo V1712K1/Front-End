@@ -5,53 +5,22 @@
             "nome" : "Antitoxico",
             "farmaceutica" : "Biofarm",
             "preco": "15",
-            "caracteristica": "Hepatoprotetor"
+            "caracteristica": "Hepatoprotetor",
+            "imagens": "https://static3.tcdn.com.br/img/img_prod/496822/antitoxico_biofarm_oral_20_ml_11689_1_20190612204843.png"
         },
         "2":{
             "nome" : "Otoclean",
             "farmaceutica" : "Esteve vetenirania",
             "preco": "10",
-            "caracteristica": "Limpador Otico"
+            "caracteristica": "Limpador Otico",
+            "imagens": "https://www.petzoo.pt/wp-content/uploads/2015/03/product_o_t_otoclean_1-e1618435188676.jpg"
         },
         "3":{
             "nome" : "Broadline",
             "farmaceutica" : "Nova de Maia",
             "preco": "9",
-            "caracteristica": "Tratamento de parasitas"
-        }            
-    },
-    "estabelecimento":{
-        "1":{
-            "pais" : "Portugal",
-            "cidade" : "Lisboa",
-            "codigo_postal": "1000"
-        },
-        "2":{
-            "pais" : "Portugal",
-            "cidade" : "Funchal",
-            "codigo_postal": "9000"
-        },
-        "3":{
-            "pais" : "Espanha",
-            "cidade" : "Madrid",
-            "codigo_postal": "28001"
-        }            
-    },
-    "cliente":{
-        "1":{
-            "nome" : "Henrique",
-            "idade" : "18",
-            "contacto": "965026890"
-        },
-        "2":{
-            "nome" : "Vitor",
-            "idade" : "20",
-            "contacto": "910716792"
-        },
-        "3":{
-            "nome" : "Gorete",
-            "idade" : "19",
-            "contacto": "963068439"
+            "caracteristica": "Tratamento de parasitas",
+            "imagens": "http://3.bp.blogspot.com/-1K0pk90fdHA/VEItjorsFjI/AAAAAAAADgA/Sv2fEAC6lbE/s1600/broadline-cats-all-packs.jpg"
         }            
     },
     "veterinario":{
@@ -63,7 +32,7 @@
             "email": "josequintas@gmail.com",
             "nacionalidade": "portuguesa",
             "morada": "rua das esquinas, n3" ,
-            "estabelecimento_id": "1"
+            "estabelecimento": "Portugal, Lisboa 1000 "
         },
         "2":{
             "nome" : "Maria Aurelia",
@@ -73,7 +42,7 @@
             "email": "mariaaur@gmail.com",
             "nacionalidade": "portuguesa",
             "morada": "rua das pretas, n55" ,
-            "estabelecimento_id": "2"
+            "estabelecimento_id": "Portugal, Funchal 9000"
         },
         "3":{
             "nome" : "Juan Torres",
@@ -83,107 +52,65 @@
             "email": "juantrr@outlook.com",
             "nacionalidade": "espanhola",
             "morada": "edificio cortes" ,
-            "estabelecimento_id": "3"
+            "estabelecimento_id": "Espanha, Madrid 28001"
         }            
     },
     "animal":{
         "1":{
             "nome" : "Tareco",
             "raca" : "Fisioterapia",
-            "idade": "35",
-            "peso": "910445778",
+            "idade": "3 anos",
+            "peso": "4kg",
             "boletim_de_saude": "Em dia",
-            "veterinario_id": "2"
+            "veterinario": "Maria Aurelia",
+            "dono": "Vitor",
+            "contacto": "910716792"
         },
         "2":{
             "nome" : "Bobi",
             "raca" : "Pitbull",
-            "idade": "2",
-            "peso": "8",
+            "idade": "2 anos",
+            "peso": "8kg",
             "boletim_de_saude": "Em dia",
-            "veterinario_id": "1"
+            "veterinario_id": "Joao Quintas",
+            "dono": "Gorete",
+            "contacto": "963068439"
         },
         "3":{
             "nome" : "Jerry",
             "raca" : "Porquinho da India",
-            "idade": "1",
-            "peso": "0.5",
+            "idade": "1 ano",
+            "peso": "0.5kg",
             "boletim_de_saude": "Em falta",
-            "veterinario_id": "3"
-        }            
-    },
-    "tratamento":{
-        "1":{
-            "data_hora" : "2021-09-20",
-            "especialidade" : "Fisioterapia",
-            "preco": "100",
-            "consulta_id": "1"
-        },
-        "2":{
-            "data_hora" : "2022-06-27",
-            "especialidade" : "Neurologia",
-            "preco": "200",
-            "consulta_id": "3"
-        },
-        "3":{
-            "data_hora" : "2021-08-19",
-            "especialidade" : "Endoscopia",
-            "preco": "300",
-            "consulta_id": "2"
+            "veterinario_id": "Juan Torres",
+            "dono": "Henrique",
+            "contacto": "965026890"
         }            
     },
     "consulta":{
         "1":{
             "data_hora" : "2022-03-17",
-            "preco" : "50",
-            "veterinario_id": "1",
-            "estabelecimento_id": "1",
-            "cliente_id": "2",
-            "animal_id": "1"
+            "preco" : "50eur",
+            "veterinario": "Joao Quintas",
+            "estabelecimento": "Lisboa",
+            "cliente": "Vitor",
+            "animal": "Tareco"
         },
         "2":{
             "data_hora" : "2022-04-27",
-            "preco" : "40",
-            "veterinario_id": "2",
-            "estabelecimento_id": "2",
-            "cliente_id": "3",
-            "animal_id": "2"
+            "preco" : "40eur",
+            "veterinario": "Maria Aurelia",
+            "estabelecimento_id": "Funchal",
+            "cliente": "Gorete",
+            "animal": "Bobi"
         },
         "3":{
             "data_hora" : "2022-09-01",
-            "preco" : "70",
-            "veterinario_id": "3",
-            "estabelecimento_id": "3",
-            "cliente_id": "1",
-            "animal_id": "3"
+            "preco" : "70eur",
+            "veterinario_id": "Juan Torres",
+            "estabelecimento": "Madrid",
+            "cliente": "Henrique",
+            "animal": "Remy"
         }            
-    },
-    "tratamento_medicamento":{
-        "1":{
-            "tratamento_id":"2",
-            "medicamento_id":"3"
-        },
-        "2":{
-            "tratamento_id":"1",
-            "medicamento_id":"2"
-        },
-        "3":{
-            "tratamento_id":"3",
-            "medicamento_id":"1"
-        }
-    },
-    "veterinario_tratamento":{
-        "1":{
-            "veterinario_id":"2",
-            "tratamento_id":"3"
-        },
-        "2":{
-            "veterinario_id":"1",
-            "tratamento_id":"1"
-        },
-        "3":{
-            "veterinario_id":"3",
-            "tratamento_id":"2"
-        }
     }
 }
