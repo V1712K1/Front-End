@@ -1,44 +1,10 @@
 <template>
     <v-app>
         <v-container>
-            <v-card
-                class="mx-auto"
-                max-width="344"
-                outlined
-                :items="products"
-                v-for='(product, index) in products' :key="index"
-            >
-                <v-list-item three-line>
-                <v-list-item-content>
-                    <div class="text-overline mb-4">
-                        {{product.nome}}
-                    </div>
-                    <v-list-item-title class="text-h5 mb-1">
-                        Headline 5
-                    </v-list-item-title>
-                    <v-list-item-subtitle>
-                        Greyhound divisely hello coldly fonwderfully
-                    </v-list-item-subtitle>
-                </v-list-item-content>
-
-                <v-list-item-avatar
-                    tile
-                    size="80"
-                    color="grey"
-                ></v-list-item-avatar>
-                </v-list-item>
-
-                <v-card-actions>
-                    <v-btn
-                        outlined
-                        rounded
-                        text
-                    >
-                        Button
-                    </v-btn>
-                </v-card-actions>
-            </v-card>
-            
+            <h1>Bla</h1>
+            <div v-for="vet in vets" :key="vet">
+                <h2>{{vet.data}}</h2>
+            </div>
         </v-container>
     </v-app>
 </template>
@@ -48,7 +14,7 @@ import axios from "axios";
 export default ({
     data() {
         return {
-            products : []
+            vets : []
         }
         
     },
@@ -58,7 +24,8 @@ export default ({
     api(){
       axios
       .get("https://projeto-veterinario-default-rtdb.europe-west1.firebasedatabase.app/")
-      .then(response => (this.products = response.data.veterinario));
+      .then(response => (this.vets = response.data.veterinario));
+      console.log(this.vets);
     },
     }
 })
