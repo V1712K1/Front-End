@@ -6,10 +6,10 @@ import Login from '../views/Login.vue'
 import Admin_Login from '../views/Admin_Login'
 import Administrador from '../views/Admin'
 import Register from '../views/Register'
-import Contactos from '../views/Contactos'
 import Consultas from '../views/Consultas'
 import Servicos from '../views/Servicos'
 import Erro from '../views/Erro'
+import Medicamentos from '../views/Medicamentos'
 import Staff from '../views/Staff'
 
 
@@ -47,11 +47,6 @@ const routes = [
     component: Administrador
   },
   {
-    path: '/Contactos',
-    name: 'Contactos',
-    component: Contactos
-  },
-  {
     path: '/Consultas',
     name: 'Consultas',
     component: Consultas
@@ -65,6 +60,11 @@ const routes = [
     path: '/Staff',
     name: 'Staff',
     component: Staff
+  },
+  {
+    path: '/Medicamentos',
+    name: 'Medicamentos',
+    component: Medicamentos
   },
   {
     path: '*',

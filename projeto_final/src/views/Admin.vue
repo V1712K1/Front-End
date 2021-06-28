@@ -3,7 +3,7 @@
 <div class="alinhadmin"> 
     <form  @submit.prevent="submeterFormulario" class="form">
 
-    <label> Consulta </label>
+    <label> Marcar Consulta </label>
 
       <div class="input-control">
         <label> animal_id </label>

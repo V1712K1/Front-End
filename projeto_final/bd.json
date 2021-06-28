@@ -1,30 +1,31 @@
 {
     
-    "medicamento":{
-        "1":{
+    "medicamento":[
+        {
             "nome" : "Antitoxico",
             "farmaceutica" : "Biofarm",
             "preco": "15",
             "caracteristica": "Hepatoprotetor",
-            "imagens": "https://static3.tcdn.com.br/img/img_prod/496822/antitoxico_biofarm_oral_20_ml_11689_1_20190612204843.png"
+            "imagens": "https://www.wadist.com.br/image/cache/catalog/HIMG8529-450x450.JPG"
         },
-        "2":{
+        {
             "nome" : "Otoclean",
             "farmaceutica" : "Esteve vetenirania",
             "preco": "10",
             "caracteristica": "Limpador Otico",
             "imagens": "https://www.petzoo.pt/wp-content/uploads/2015/03/product_o_t_otoclean_1-e1618435188676.jpg"
         },
-        "3":{
+        {
             "nome" : "Broadline",
             "farmaceutica" : "Nova de Maia",
             "preco": "9",
             "caracteristica": "Tratamento de parasitas",
             "imagens": "http://3.bp.blogspot.com/-1K0pk90fdHA/VEItjorsFjI/AAAAAAAADgA/Sv2fEAC6lbE/s1600/broadline-cats-all-packs.jpg"
-        }            
-    },
-    "veterinario":{
-        "1":{
+        } 
+
+    ],
+    "veterinario":[
+        {
             "nome" : "Joao Quintas",
             "especialidade" : "Fisioterapia",
             "idade": "35",
@@ -32,9 +33,10 @@
             "email": "josequintas@gmail.com",
             "nacionalidade": "portuguesa",
             "morada": "rua das esquinas, n3" ,
-            "estabelecimento": "Portugal, Lisboa 1000 "
+            "estabelecimento": "Portugal, Lisboa 1000 ",
+            "imagem": "https://inovaveterinaria.com.br/wp-content/uploads/2020/09/716_INOVA_SITE_PICTOGRAMA_FISIOTERAPIA.png"
         },
-        "2":{
+        {
             "nome" : "Maria Aurelia",
             "especialidade" : "Endoscopia",
             "idade": "42",
@@ -42,9 +44,10 @@
             "email": "mariaaur@gmail.com",
             "nacionalidade": "portuguesa",
             "morada": "rua das pretas, n55" ,
-            "estabelecimento_id": "Portugal, Funchal 9000"
+            "estabelecimento": "Portugal, Funchal 9000",
+            "imagem": "https://media.istockphoto.com/vectors/stomach-endoscopy-vector-icon-gastroscopy-logo-symbol-idea-flat-in-vector-id1030296026?k=6&m=1030296026&s=612x612&w=0&h=iJZqMWrGMb8OQ0JKOskmv8wlo_yQ9kjf4wmmdgnedoM="
         },
-        "3":{
+        {
             "nome" : "Juan Torres",
             "especialidade" : "Neurologia",
             "idade": "50",
@@ -52,11 +55,14 @@
             "email": "juantrr@outlook.com",
             "nacionalidade": "espanhola",
             "morada": "edificio cortes" ,
-            "estabelecimento_id": "Espanha, Madrid 28001"
-        }            
-    },
-    "animal":{
-        "1":{
+            "estabelecimento": "Espanha, Madrid 28001",
+            "imagem": "https://animaltalks.pt/wp-content/uploads/2018/10/40-illustration-pet-medical-illustration.jpg"
+        }   
+
+    ],
+                 
+    "animal":[
+        {
             "nome" : "Tareco",
             "raca" : "Fisioterapia",
             "idade": "3 anos",
@@ -66,7 +72,7 @@
             "dono": "Vitor",
             "contacto": "910716792"
         },
-        "2":{
+        {
             "nome" : "Bobi",
             "raca" : "Pitbull",
             "idade": "2 anos",
@@ -76,8 +82,8 @@
             "dono": "Gorete",
             "contacto": "963068439"
         },
-        "3":{
-            "nome" : "Jerry",
+        {
+            "nome" : "Joaquim",
             "raca" : "Porquinho da India",
             "idade": "1 ano",
             "peso": "0.5kg",
@@ -85,10 +91,11 @@
             "veterinario_id": "Juan Torres",
             "dono": "Henrique",
             "contacto": "965026890"
-        }            
-    },
-    "consulta":{
-        "1":{
+        }
+
+    ],
+    "consulta":[
+        {
             "data_hora" : "2022-03-17",
             "preco" : "50eur",
             "veterinario": "Joao Quintas",
@@ -96,21 +103,22 @@
             "cliente": "Vitor",
             "animal": "Tareco"
         },
-        "2":{
+        {
             "data_hora" : "2022-04-27",
             "preco" : "40eur",
             "veterinario": "Maria Aurelia",
-            "estabelecimento_id": "Funchal",
+            "estabelecimento": "Funchal",
             "cliente": "Gorete",
             "animal": "Bobi"
         },
-        "3":{
+        {
             "data_hora" : "2022-09-01",
             "preco" : "70eur",
-            "veterinario_id": "Juan Torres",
+            "veterinario": "Juan Torres",
             "estabelecimento": "Madrid",
             "cliente": "Henrique",
-            "animal": "Remy"
-        }            
-    }
+            "animal": "Joaquim"
+        } 
+
+    ]
 }

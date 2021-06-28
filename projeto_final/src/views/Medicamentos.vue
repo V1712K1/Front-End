@@ -1,21 +1,20 @@
 <template>
     <v-app>
         <v-container>
-            <h1>Os nossos veterinários!</h1>
-            <div v-for="(item, index) in vets" :key="index" :item="vets" class="dispor_cards">
+            <h1>Medicamentos</h1>
+            <div v-for="(item, index) in medicamentos" :key="index" :item="medicamentos" class="dispor_cards">
                    <v-card class="mx-auto" width="344">
                    <v-img
-                        :src="item.imagem"
+                        :src="item.imagens"
                         height="344px"
                     ></v-img>
 
                     <v-card-title style="display:inline-flex;">
-                        {{item.nome}}
-                        {{item.idade}} anos
+                        {{item.nome}}:
+                        {{item.preco}} euros
                     </v-card-title>
 
                     <v-card-subtitle>
-                        {{item.especialidade}}
                     </v-card-subtitle>
 
                     <v-card-actions>
@@ -27,15 +26,15 @@
 
                     </v-card-actions>
 
-                    <v-expand-transition>
+                    <v-expand-transition style="display:flex;">
                         <div v-show="show">
                         <v-divider></v-divider>
 
-                        <v-card-text style="display:flex;">
-                            Contactos: {{item.telemovel}}, {{item.email}}
+                        <v-card-text >
+                            Caracteristicas: {{item.caracteristica}}
                         </v-card-text>
-                        <v-card-text style="display:flex;">
-                            Estabelecimento: {{item.estabelecimento}}
+                        <v-card-text >
+                            Farmaceutica: {{item.farmaceutica}}
                         </v-card-text>
                         </div>
                     </v-expand-transition>
@@ -48,11 +47,12 @@
 <style scoped>
 .dispor_cards{
     display: inline-flex;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 10px;
     margin-top: 30px;
     margin-right: 10px;
     margin-left: 10px;
+    margin-bottom:25px;
     box-shadow: 4px 5px 9px  #8C9EFF;
     border-radius: 10px;
 }
@@ -63,7 +63,7 @@ import axios from "axios";
 export default ({
     data() {
         return {
-            vets : [],
+            medicamentos : [],
             show: false
         };
         
@@ -79,7 +79,7 @@ export default ({
       axios
       .get("https://projeto-veterinario-default-rtdb.europe-west1.firebasedatabase.app/.json")
     //   .then(response => (this.vets = Object.keys(response.data.veterinario)));
-      .then(response => (this.vets = response.data.veterinario));
+      .then(response => (this.medicamentos = response.data.medicamento));
     },
     }
 })

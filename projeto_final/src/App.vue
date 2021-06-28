@@ -62,26 +62,19 @@
           <router-link to="/Consultas">
             <v-list-item>
                 <v-list-item-title>
-                 Marcar Consulta         
+                 Consultas         
                 </v-list-item-title>              
             </v-list-item>
           </router-link> 
 
-          <router-link to="/about">
+          <router-link to="/Medicamentos">
             <v-list-item>
               <v-list-item-title>
-                 Quem somos          
+                 Medicamentos Disponíveis         
               </v-list-item-title>              
             </v-list-item>
           </router-link> 
-          
-         <router-link to="/Contactos">
-            <v-list-item>
-                <v-list-item-title>
-                 Contactos      
-                </v-list-item-title>              
-            </v-list-item>
-          </router-link>    
+             
    
           <v-list-item>
             <v-list-item-title>-----</v-list-item-title>
@@ -126,6 +119,7 @@
   background-color: #536DFE;
 }
 </style>
+
 <script>
 export default {
   name: "App",
