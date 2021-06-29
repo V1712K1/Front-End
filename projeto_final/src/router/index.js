@@ -1,13 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import About from '../views/About.vue'
 import Login from '../views/Login.vue'
 import Admin_Login from '../views/Admin_Login'
 import Administrador from '../views/Admin'
 import Register from '../views/Register'
 import Consultas from '../views/Consultas'
-import Servicos from '../views/Servicos'
 import Erro from '../views/Erro'
 import Medicamentos from '../views/Medicamentos'
 import Staff from '../views/Staff'
@@ -20,11 +18,6 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    component: About
   },
   {
     path: '/Login',
@@ -50,11 +43,6 @@ const routes = [
     path: '/Consultas',
     name: 'Consultas',
     component: Consultas
-  },
-  {
-    path: '/Servicos',
-    name: 'Servicos',
-    component: Servicos
   },
   {
     path: '/Staff',

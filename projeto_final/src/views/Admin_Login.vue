@@ -101,7 +101,7 @@ import firebase from 'firebase';
             var user = userCredential.user;
             console.log("user " + user);
             this.alerta = false;
-            this.$router.push("/admin");
+            this.$router.push("/Admin");
           }else{
             this.alerta = true; 
             this.alert = "Credencias de administrador erradas";

@@ -116,7 +116,7 @@
 
 .cor_footer{
 
-  background-color: #536DFE;
+  background-color: #8C9EFF;
 }
 </style>
 

@@ -2,7 +2,18 @@
     <v-app>
         <v-container>
             <h1>Medicamentos</h1>
+            <div class="input">
+            <v-text-field
+                label="Main input"
+                :rules="rules"
+                hide-details="auto"
+                v-model="pesquisa"
+                
+            ></v-text-field>
+            <v-btn color="#8C9EFF" @click="procura(pesquisa)">Pesquisar</v-btn>
+            </div>
             <div v-for="(item, index) in medicamentos" :key="index" :item="medicamentos" class="dispor_cards">
+                
                    <v-card class="mx-auto" width="344">
                    <v-img
                         :src="item.imagens"
@@ -56,6 +67,10 @@
     box-shadow: 4px 5px 9px  #8C9EFF;
     border-radius: 10px;
 }
+
+.input{
+    display: flex;
+}
 </style>
 
 <script>
@@ -64,17 +79,18 @@ export default ({
     data() {
         return {
             medicamentos : [],
-            show: false
+            show: false,
+            rules: [
+                value => !!value || 'Required.',
+                value => (value && value.length >= 3) || 'Min 3 characters',
+            ],
         };
         
     },
-
     mounted(){
         this.api();
     },
-
     methods:{
-
     api(){
       axios
       .get("https://projeto-veterinario-default-rtdb.europe-west1.firebasedatabase.app/.json")
@@ -83,5 +99,4 @@ export default ({
     },
     }
 })
-
 </script>
