@@ -1,0 +1,14 @@
+<v-card class="barrapesquisa">
+            <v-card-text>
+              <v-layout>
+                <v-flex>
+                  <v-subheader style="color:#8C9EFF;"> Selecione o medicamento que deseja</v-subheader>
+                </v-flex>
+                <v-flex>
+                  <v-autocomplete v-model="meds" :items="indices" label="Medicamentos" v-on:keyup.enter="pesquisa(meds)" color="#8C9EFF">
+                        
+                  </v-autocomplete>                
+                </v-flex>
+              </v-layout>
+            </v-card-text>
+            </v-card>

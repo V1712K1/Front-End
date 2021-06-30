@@ -6,14 +6,14 @@
     <label> Marcar Consulta </label>
 
       <div class="input-control">
-        <label> animal_id </label>
-        <input type="text"  v-model="consulta.animal_id">
+        <label> animal </label>
+        <input type="text"  v-model="consulta.animal">
       </div>
 
       <br>
       <div class="input-control">
-        <label>  cliente_id </label>
-        <input type="text" v-model="consulta.cliente_id">
+        <label>  cliente </label>
+        <input type="text" v-model="consulta.cliente">
       </div> 
        <br>
       <div class="input-control">
@@ -22,8 +22,8 @@
       </div> 
        <br>
       <div class="input-control">
-        <label>  estabelecimento_id </label>
-        <input type="text" v-model="consulta.estabelecimento_id">
+        <label>  estabelecimento </label>
+        <input type="text" v-model="consulta.estabelecimento">
       </div> 
        <br>
       <div class="input-control">
@@ -32,8 +32,8 @@
       </div> 
        <br>
       <div class="input-control">
-        <label>  veterinario_id </label>
-        <input type="text" v-model="consulta.veterinario_id">
+        <label>  veterinario </label>
+        <input type="text" v-model="consulta.veterinario">
       </div> 
 
       <br>
@@ -51,12 +51,12 @@ export default {
   data() {
     return {
       consulta:{
-        animal_id:'',
-        cliente_id:'',
+        animal:'',
+        cliente:'',
         data_hora:'',
-        estabelecimento_id:'',
+        estabelecimento:'',
         preco:'',
-        veterinario_id:''
+        veterinario:''
       }
     }
   },
@@ -64,7 +64,7 @@ export default {
   methods:{
     submeterFormulario(){
        
-      return axios.post('https://projeto-veterinario-default-rtdb.europe-west1.firebasedatabase.app/.json',  this.consulta)
+      return axios.post('https://projeto-veterinario-default-rtdb.europe-west1.firebasedatabase.app/consulta.json',  this.consulta)
     },
     
   }
