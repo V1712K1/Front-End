@@ -2,9 +2,25 @@
     <v-app>
         <v-container>
             <h1>Medicamentos</h1>
+            <v-card class="barrapesquisa">
+            <v-card-text>
+              <v-layout>
+                <v-flex>
+                  <v-subheader style="color:#8C9EFF;"> Selecione o medicamento que deseja</v-subheader>
+                </v-flex>
+                <v-flex>
+                    <div class="asd">
+                        <input v-model="message" placeholder="medicamento" style="border:1px solid #8C9EFF; border-radius:6px; margin-right:10px;">
+                        <input v-model.number="precom" placeholder="até ___ valor" style="border:1px solid #8C9EFF; border-radius:6px;">
+                    </div>
+                </v-flex>
+              </v-layout>
+            </v-card-text>
+            </v-card>
 
             <div v-for="(item, index) in medicamentos" :key="index" :item="medicamentos" class="dispor_cards">
-                   <v-card class="mx-auto" width="344">
+                   <div v-if="item.nome == message || message == '' && item.preco <= precom ">
+                        <v-card class="mx-auto" width="344">
                    <v-img
                         :src="item.imagens"
                         height="344px"
@@ -26,7 +42,9 @@
                         <v-spacer></v-spacer>
 
                         <v-btn color="indigo accent-1" class="alinha_card_btn"  @click="carrinho_compra(item)">
-                            <v-icon>mdi-thumb-up</v-icon>
+                            <span class="material-icons">
+                                shopping_cart
+                            </span>
                         </v-btn>
 
                     </v-card-actions>
@@ -44,35 +62,45 @@
                         </div>
                     </v-expand-transition>
                 </v-card>
+                   </div>
                </div> 
 
                <hr>
                <hr> 
 
-               <div class="colunaFav">
+               <div class="colunaCompra">
                 <div v-if="compras.length>0">
                   <h3>Carrinho de Compras </h3>
                   <div v-for="(compra, index) in compras" :key="index">
-                      {{compra.nome}}, {{compra.preco}}euros <v-icon color="red" small @click="removeCompra(compra)">mdi-close-circle-outline</v-icon>
+                    {{compra.nome}}, {{compra.preco}}euros <v-icon color="red" small @click="removeCompra(index)">mdi-close-circle-outline</v-icon>
                   </div>
                 </div>
-
           </div>
         </v-container>
     </v-app>
 </template>
 
 <style scoped>
+
+.asd{
+    margin-top: 10px;
+    margin-left: 350px;
+}
+
 .dispor_cards{
     display: inline-flex;
     justify-content: space-between;
-    padding: 10px;
     margin-top: 30px;
     margin-right: 10px;
     margin-left: 10px;
     margin-bottom:25px;
     box-shadow: 4px 5px 9px  #8C9EFF;
-    border-radius: 10px;
+    border-radius: 20px;
+}
+.colunaCompra{
+  display: flex;
+  justify-content: center;
+  padding: 10px;
 }
 </style>
 
@@ -82,6 +110,8 @@ export default ({
     data() {
         return {
             medicamentos: [],
+            precom : 20000,
+            message:'',
             compras: [],
             show: false,
             carrrinho_compra: {

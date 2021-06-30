@@ -17,7 +17,7 @@
         <th>{{item.cliente}}</th>
         <th>{{item.data_hora}}</th>
         <th>{{item.estabelecimento}}</th>
-        <th>{{item.preco}}</th>
+        <th>{{item.preco}}€</th>
         <th>{{item.veterinario}}</th>
     </tr>
 </table>

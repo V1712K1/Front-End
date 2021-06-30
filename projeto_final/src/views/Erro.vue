@@ -1,3 +1,4 @@
+  
 <template>
     <div class="container-fluid" :style="{'background-image': 'url(' + require('@/assets/erro.jpg') + ')'}" style="height:900px; ">
     <h1 class="erro">404</h1>
@@ -9,20 +10,14 @@
 
 </template>
 <style scoped>
-
 .container-fluid{
    
     color: white;
 }
-
 .erro{
-
     font-size: 250px;
 }
-
 .botao_retorna{
-
     margin-top: 20px;
 }
-
 </style>
